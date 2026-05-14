@@ -199,22 +199,42 @@ These images are displayed in real-time on the dashboard.
 
 ## Screenshots
 
-### Decision Tree Visualization
+### Main Dashboard Interface
+The application displays a professional, modern interface with:
+
+**Left Panel - Measurement Input:**
+- Four input fields for Iris flower measurements (Sepal Length, Sepal Width, Petal Length, Petal Width)
+- Example placeholder values for quick testing
+- "Predict Species" button with gradient styling
+- Live prediction results showing the species and model accuracy percentage
+- Real-time error messages and validation feedback
+
+**Right Panel - Model Summary:**
+- Classifier type: Decision Tree
+- Dataset name: Iris Flowers
+- Available species: setosa, versicolor, virginica
+- Visual cards displaying model metrics
+- Generated visualizations:
+  - **Decision Tree Diagram** - Shows the complete decision tree structure
+  - **Confusion Matrix** - Displays model evaluation metrics
+
+### Key Visual Features:
+- ✨ **Gradient Background** - Professional deep blue gradient from top-left
+- 🎨 **Card-Based Layout** - Clean, organized information sections
+- 📊 **Real-Time Predictions** - Instant species prediction with accuracy percentage
+- 📱 **Responsive Design** - Adapts seamlessly to desktop, tablet, and mobile
+- ⚡ **Loading Indicators** - Animated dots showing processing state
+- 🔵 **Cyan Accents** - Modern color scheme with cyan highlights
+
+### Generated ML Visualizations
+
+#### Decision Tree Visualization
 ![Decision Tree](outputs/decision_tree.png)
-*Displays the trained decision tree structure with decision boundaries and feature importance*
+*Complete decision tree structure showing all decision nodes and leaf classifications*
 
-### Confusion Matrix
+#### Confusion Matrix
 ![Confusion Matrix](outputs/confusion_matrix.png)
-*Shows model accuracy across different Iris species classes*
-
-### Dashboard Interface
-The application features:
-- Clean gradient background (deep blue theme)
-- Professional card-based layout
-- Real-time prediction display
-- Mobile-responsive design
-- Loading animation indicators
-- Input validation and error handling
+*Model evaluation showing prediction accuracy for each Iris species*
 
 ## Troubleshooting
 
