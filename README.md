@@ -224,10 +224,3 @@ The application displays a professional, modern interface with:
 - ⚡ **Loading Indicators** - Animated dots showing processing state
 - 🔵 **Cyan Accents** - Modern color scheme with cyan highlights
 
-### Generated ML Visualizations
-
-#### Confusion Matrix
-![Confusion Matrix](outputs/confusion_matrix.png)
-*Model evaluation showing prediction accuracy for each Iris species*
-
-## Troubleshooting
