@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Decision Tree Iris Classifier</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <p>Machine Learning Internship Task</p>
+        <h1>Iris Flower Decision Tree Classifier</h1>
+        <p>Enter flower measurements to predict the species instantly and explore the model visualization.</p>
+      </header>
+
+      <div class="grid">
+        <section class="card">
+          <h2>Measurement Input</h2>
+          <form id="prediction-form">
+            <div class="field-grid">
+              <div class="field">
+                <label for="sepal-length">Sepal Length (cm)</label>
+                <input id="sepal-length" name="sepal_length" type="number" step="0.1" min="0" placeholder="5.1" />
+              </div>
+              <div class="field">
+                <label for="sepal-width">Sepal Width (cm)</label>
+                <input id="sepal-width" name="sepal_width" type="number" step="0.1" min="0" placeholder="3.5" />
+              </div>
+              <div class="field">
+                <label for="petal-length">Petal Length (cm)</label>
+                <input id="petal-length" name="petal_length" type="number" step="0.1" min="0" placeholder="1.4" />
+              </div>
+              <div class="field">
+                <label for="petal-width">Petal Width (cm)</label>
+                <input id="petal-width" name="petal_width" type="number" step="0.1" min="0" placeholder="0.2" />
+              </div>
+            </div>
+
+            <div class="button-row">
+              <button id="predict-button" type="submit">Predict Species</button>
+              <div id="loading-indicator" class="loader">
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+                <span class="loader-dot"></span>
+              </div>
+            </div>
+          </form>
+
+          <div class="status-box">
+            <p>Prediction result: <span class="result-value" id="result-text">Set input values and click predict</span></p>
+            <p>Model accuracy: <span class="result-value" id="accuracy-value">{{ accuracy }}</span></p>
+            <p id="alert-box" style="margin-top: 12px; color: #fda4af;"></p>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Model Summary</h2>
+          <div class="metric-grid">
+            <div class="metric-card">
+              <strong>Classifier</strong>
+              <span>Decision Tree</span>
+            </div>
+            <div class="metric-card">
+              <strong>Dataset</strong>
+              <span>Iris Flowers</span>
+            </div>
+            <div class="metric-card">
+              <strong>Species</strong>
+              <span>{{ species_names | join(', ') }}</span>
+            </div>
+          </div>
+
+          <div class="visual-grid">
+            <div class="visual-card">
+              <img src="{{ decision_tree_image }}" alt="Decision Tree Visualization" />
+            </div>
+            <div class="visual-card">
+              <img src="{{ confusion_matrix_image }}" alt="Confusion Matrix" />
+            </div>
+          </div>
+        </section>
+      </div>
+
+      <footer class="footer">
+        <p>Built with Python, Flask, Scikit-learn, Pandas, NumPy, and Matplotlib.</p>
+      </footer>
+    </div>
+    <script src="/static/js/script.js"></script>
+  </body>
+</html>

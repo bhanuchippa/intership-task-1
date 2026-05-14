@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+env/
+venv/
+ENV/
+.env
+.DS_Store
+.ipynb_checkpoints/
+*.log
+*.sqlite3
+.idea/
+.vscode/
+model/decision_tree_model.pkl

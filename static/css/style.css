@@ -1,0 +1,244 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  min-height: 100vh;
+  background: radial-gradient(circle at top left, #003366 0%, #00549a 35%, #081e47 100%);
+  color: #edf2f7;
+}
+
+.container {
+  width: min(1120px, 100% - 32px);
+  margin: 0 auto;
+  padding: 40px 0 80px;
+}
+
+.header {
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.header h1 {
+  font-size: clamp(2rem, 3vw, 3rem);
+  margin-bottom: 12px;
+}
+
+.header p {
+  font-size: 1rem;
+  color: #cbd5e1;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1.2fr 0.8fr;
+}
+
+.card {
+  background: rgba(18, 52, 92, 0.82);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.22);
+  padding: 28px;
+  backdrop-filter: blur(12px);
+}
+
+.card h2 {
+  font-size: 1.4rem;
+  margin-bottom: 18px;
+}
+
+.field-grid {
+  display: grid;
+  gap: 18px;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.field label {
+  color: #cbd5e1;
+  font-size: 0.95rem;
+}
+
+.field input {
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  color: #f8fafc;
+  padding: 14px 16px;
+  font-size: 1rem;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+.field input:focus {
+  outline: none;
+  border-color: #7dd3fc;
+  transform: translateY(-1px);
+}
+
+.button-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-top: 18px;
+}
+
+button {
+  border: none;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #5b8def, #1cc6d0);
+  color: #fff;
+  padding: 14px 24px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.25s ease;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 32px rgba(28, 198, 208, 0.22);
+}
+
+.status-box {
+  margin-top: 20px;
+  padding: 20px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.status-box p {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+.result-value {
+  color: #a5f3fc;
+  font-weight: 700;
+}
+
+.metric-grid {
+  display: grid;
+  gap: 18px;
+  margin-top: 16px;
+}
+
+.metric-card {
+  background: rgba(255, 255, 255, 0.06);
+  border-radius: 18px;
+  padding: 18px;
+}
+
+.metric-card strong {
+  display: block;
+  font-size: 0.92rem;
+  color: #94a3b8;
+  margin-bottom: 10px;
+}
+
+.metric-card span {
+  font-size: 1.6rem;
+  color: #e2e8f0;
+}
+
+.visual-grid {
+  display: grid;
+  gap: 24px;
+  margin-top: 24px;
+}
+
+.visual-card {
+  border-radius: 22px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.visual-card img {
+  width: 100%;
+  display: block;
+}
+
+.footer {
+  margin-top: 40px;
+  text-align: center;
+  color: #94a3b8;
+  font-size: 0.95rem;
+}
+
+.footer a {
+  color: #7dd3fc;
+  text-decoration: none;
+}
+
+.loader {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.loader.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.loader-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #7dd3fc;
+  animation: pulse 0.8s infinite ease-in-out;
+}
+
+.loader-dot:nth-child(2) {
+  animation-delay: 0.15s;
+}
+
+.loader-dot:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+@keyframes pulse {
+  0%, 100% { transform: scale(1); opacity: 1; }
+  50% { transform: scale(1.4); opacity: 0.5; }
+}
+
+@media (max-width: 860px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .field-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 540px) {
+  .container {
+    padding: 24px 0 56px;
+  }
+
+  .header h1 {
+    font-size: 2.2rem;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+}
