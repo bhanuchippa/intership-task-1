@@ -150,7 +150,6 @@ DecisionTreeProject/
 ├── templates/
 │   └── index.html             # Dashboard template
 ├── outputs/
-│   ├── decision_tree.png      # Decision tree visualization
 │   ├── confusion_matrix.png   # Model evaluation chart
 │   └── ...
 ├── requirements.txt           # Python dependencies
@@ -192,7 +191,6 @@ Accepts JSON payload with flower measurements and returns species prediction.
 
 The application automatically generates:
 
-- **Decision Tree Visualization** (`outputs/decision_tree.png`): Visual representation of the trained decision tree
 - **Confusion Matrix** (`outputs/confusion_matrix.png`): Model evaluation showing prediction accuracy for each class
 
 These images are displayed in real-time on the dashboard.
@@ -227,10 +225,6 @@ The application displays a professional, modern interface with:
 - 🔵 **Cyan Accents** - Modern color scheme with cyan highlights
 
 ### Generated ML Visualizations
-
-#### Decision Tree Visualization
-![Decision Tree](outputs/decision_tree.png)
-*Complete decision tree structure showing all decision nodes and leaf classifications*
 
 #### Confusion Matrix
 ![Confusion Matrix](outputs/confusion_matrix.png)

@@ -62,7 +62,6 @@ class IrisModelPipeline:
 
     def _save_visualizations(self):
         self._plot_confusion_matrix()
-        self._plot_decision_tree()
 
     def _plot_confusion_matrix(self):
         plt.figure(figsize=(7, 6))

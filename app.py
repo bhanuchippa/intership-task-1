@@ -17,7 +17,6 @@ def index():
         'index.html',
         accuracy=f"{pipeline.accuracy:.2f}%",
         species_names=pipeline.target_names,
-        decision_tree_image='/outputs/decision_tree.png',
         confusion_matrix_image='/outputs/confusion_matrix.png'
     )
 
